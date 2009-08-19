@@ -1,7 +1,7 @@
 %define	module	gollem
 %define	name	horde-%{module}
 %define version 1.0.4
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define _requires_exceptions pear(Horde.*)
 
@@ -34,15 +34,15 @@ rm -rf %{buildroot}
 
 # horde configuration
 install -d -m 755 %{buildroot}%{_sysconfdir}/horde/registry.d
-cat > %{buildroot}%{_sysconfdir}/horde/registry.d/%{module}.php <<EOF
+cat > %{buildroot}%{_sysconfdir}/horde/registry.d/%{module}.php <<'EOF'
 <?php
 //
 // Gollem Horde configuration file
 //
  
-\$this->applications['gollem'] = array(
-    'fileroot' => \$this->applications['horde']['fileroot'] . '/gollem',
-    'webroot'  => \$this->applications['horde']['webroot'] . '/gollem',
+$this->applications['gollem'] = array(
+    'fileroot' => $this->applications['horde']['fileroot'] . '/gollem',
+    'webroot'  => $this->applications['horde']['webroot'] . '/gollem',
     'name'     => _("File Manager"),
     'status'   => 'active',
     'menu_parent' => 'myaccount',
