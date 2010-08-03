@@ -1,7 +1,7 @@
 %define	module	gollem
 %define	name	horde-%{module}
 %define version 1.0.4
-%define release %mkrel 6
+%define release %mkrel 7
 
 %define _requires_exceptions pear(Horde.*)
 
@@ -16,7 +16,6 @@ Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
 Requires(post):	rpm-helper
 Requires:	horde >= 3.3.5
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Gollem is the Horde web-based File Manager, providing the ability to fully
