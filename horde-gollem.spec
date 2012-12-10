@@ -130,3 +130,34 @@ fi
 %config(noreplace) %{_sysconfdir}/horde/registry.d/%{module}.php
 %config(noreplace) %{_sysconfdir}/horde/%{module}
 %{_datadir}/horde/%{module}
+
+
+%changelog
+* Tue Aug 03 2010 Thomas Spuhler <tspuhler@mandriva.org> 1.0.4-7mdv2011.0
++ Revision: 565211
+- Increased release for rebuild
+
+* Mon Jan 18 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.4-6mdv2010.1
++ Revision: 493344
+- rely on filetrigger for reloading apache configuration begining with 2010.1, rpm-helper macros otherwise
+- restrict default access permissions to localhost only, as per new policy
+
+* Sun Sep 20 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.4-4mdv2010.0
++ Revision: 446017
+- new setup (simpler is better)
+
+* Wed Aug 19 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.4-3mdv2010.0
++ Revision: 418311
+- fix registry file (fix #52696)
+
+* Wed Nov 19 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.4-2mdv2009.1
++ Revision: 304681
+- fix automatic dependencies
+
+* Sun Oct 19 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.4-1mdv2009.1
++ Revision: 295309
+- import horde-gollem
+
+
+* Sun Oct 19 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.4-1mdv2009.1
+- first mdv release
