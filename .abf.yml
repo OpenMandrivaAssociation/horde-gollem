@@ -1,2 +1,4 @@
+removed_sources:
+  gollem-h3-1.0.4.tar.gz: 91c22f3dff65f07532003c0fa660cefe05a2e40b
 sources:
-  "gollem-h3-1.0.4.tar.gz": 91c22f3dff65f07532003c0fa660cefe05a2e40b
+  gollem-h3-1.1.2.tar.gz: 7fe3397b88ad26cc3ebb81589082d447b0402978

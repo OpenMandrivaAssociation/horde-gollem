@@ -1,18 +1,20 @@
 %define	module	gollem
 %define	name	horde-%{module}
-%define version 1.0.4
-%define release %mkrel 7
 
+%if %{_use_internal_dependency_generator}
+%define __noautoreq 'pear\\(Horde.*\\)'
+%else
 %define _requires_exceptions pear(Horde.*)
+%endif
 
 Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Version:	1.1.2
+Release:	1
 Summary:	The Horde file manager
 License:	GPL
 Group:		System/Servers
 URL:		http://www.horde.org/%{module}
-Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
+Source0:	ftp://ftp.horde.org:21/pub/gollem/gollem-h3-%{version}.tar.gz
 Requires(post):	rpm-helper
 Requires:	horde >= 3.3.5
 BuildArch:	noarch
@@ -29,8 +31,6 @@ Horde's MIME_Viewer framework to identify file types, associate icons, etc.
 %build
 
 %install
-rm -rf %{buildroot}
-
 # apache configuration
 install -d -m 755 %{buildroot}%{_webappconfdir}
 cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
@@ -106,7 +106,6 @@ for file in %{buildroot}%{_sysconfdir}/horde/%{module}/*.dist; do
 done
 
 %clean
-rm -rf %{buildroot}
 
 %post
 if [ $1 = 1 ]; then
@@ -114,14 +113,6 @@ if [ $1 = 1 ]; then
 	%create_ghostfile %{_sysconfdir}/horde/%{module}/conf.php apache apache 644
 	%create_ghostfile %{_sysconfdir}/horde/%{module}/conf.php.bak apache apache 644
 fi
-%if %mdkversion < 201010
-%_post_webapp
-%endif
-
-%postun
-%if %mdkversion < 201010
-%_postun_webapp
-%endif
 
 %files
 %defattr(-,root,root)
@@ -161,3 +152,4 @@ fi
 
 * Sun Oct 19 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.4-1mdv2009.1
 - first mdv release
+
