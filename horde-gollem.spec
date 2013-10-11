@@ -7,9 +7,9 @@
 %define _requires_exceptions pear(Horde.*)
 %endif
 
-Name:		%{name}
+Name:		horde-%{module}
 Version:	1.1.2
-Release:	1
+Release:	2
 Summary:	The Horde file manager
 License:	GPL
 Group:		System/Servers
@@ -111,7 +111,6 @@ if [ $1 = 1 ]; then
 fi
 
 %files
-%defattr(-,root,root)
 %config(noreplace) %{_webappconfdir}/%{name}.conf
 %doc README COPYING docs
 %config(noreplace) %{_sysconfdir}/horde/registry.d/%{module}.php
