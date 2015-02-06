@@ -9,7 +9,7 @@
 
 Name:		horde-%{module}
 Version:	1.1.2
-Release:	2
+Release:	3
 Summary:	The Horde file manager
 License:	GPL
 Group:		System/Servers
